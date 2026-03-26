@@ -10,8 +10,8 @@ Title: Cartoony Rubber Ducky
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF('/scene.gltf')
+export default function Model(props) {
+  const { nodes, materials } = useGLTF('./../../public/rubber_duck/scene.gltf')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Object_2.geometry} material={materials.lambert2SG} rotation={[-Math.PI / 2, 0, 0]} scale={0.033} />
@@ -19,4 +19,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/scene.gltf')
+useGLTF.preload('./../../public/rubber_duck/scene.gltf')
