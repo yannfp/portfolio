@@ -1,9 +1,3 @@
-import { Suspense } from "react";
-
-import { Canvas } from "@react-three/fiber";
-
-import RubberDuck from "./RubberDuck";
-
 const links = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
