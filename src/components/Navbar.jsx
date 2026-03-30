@@ -29,7 +29,7 @@ const Bar = () => {
 const Navbar = () => {
   return (
     <div className="relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-30 bg-aqua-wave/70 blur-[80px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-30 bg-aqua-wave/40 blur-[80px] rounded-full pointer-events-none" />
 
       <nav className="fixed top-0 left-0 w-full flex justify-center z-50 pointer-events-none mt-6">
         <div className="pointer-events-auto w-full max-w-2xl">
