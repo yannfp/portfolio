@@ -20,7 +20,7 @@ const NavLinks = () => {
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full">
+    <nav className="fixed top-0 left-0 w-full z-50">
       <div className="p-4 flex justify-between items-center">
         <a href="/">Yann.Dev</a>
         <NavLinks />
