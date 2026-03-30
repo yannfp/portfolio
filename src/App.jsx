@@ -1,15 +1,11 @@
-import React, { Suspense } from "react";
-
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Loader } from "@react-three/drei";
-
 import Navbar from "./components/Navbar";
-import RubberDuck from "./components/RubberDuck";
+import Hero from "./components/Hero";
 
 const App = () => {
   return (
-    <div className="w-screen h-screen relative">
+    <div className="w-screen h-screen">
       <Navbar />
+      <Hero />
     </div>
   );
 };
