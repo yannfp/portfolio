@@ -5,6 +5,9 @@
 @theme {
     --font-header: 'Khand', sans-serif;
     --font-body: 'Hind', sans-serif;
+
+    --color-mango-pop: #FF9F1C;
+    --color-aqua-wave: #2EC4B6;
 }
 
 @utility glass-morphism {
@@ -22,4 +25,10 @@ html, body, #root {
 
     margin: 0;
     padding: 0;
+
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, .font-header {
+    font-family: var(--font-header);
 }
