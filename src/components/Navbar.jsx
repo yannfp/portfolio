@@ -9,7 +9,6 @@ const links = [
 ];
 
 const NavLinks = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const [coords, setCoords] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e, index) => {
@@ -23,7 +22,7 @@ const NavLinks = () => {
 
   return (
     <div className="flex gap-10">
-      {links.map(({ href, label }) => (
+      {links.map(({ href, label }, index) => (
         <a
           key={href}
           href={href}
@@ -34,9 +33,18 @@ const NavLinks = () => {
             "--y": `${coords.y}px`,
           }}
           className="relative overflow-hidden inline-block px-5 py-1.5 cursor-pointer rounded-2xl 
-                     group transition-all duration-300 border border-transparent hover:border-white-snow"
+                     group transition-all duration-500 border border-transparent hover:border-white-snow"
         >
-          {label}
+          <span 
+            className="absolute w-0 h-0 bg-white rounded-full 
+                       transition-all duration-500 ease-out -translate-x-1/2 -translate-y-1/2
+                       top-(--y) left-(--x)
+                       group-hover:w-60 group-hover:h-60"
+          ></span>
+
+          <span className="relative z-10 transition-colors duration-300 group-hover:text-[#050505]">
+            {label}
+          </span>
         </a>
       ))}
     </div>
