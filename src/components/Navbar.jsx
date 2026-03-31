@@ -32,14 +32,14 @@ const NavLinks = () => {
             "--x": `${coords.x}px`,
             "--y": `${coords.y}px`,
           }}
-          className="relative overflow-hidden inline-block px-5 py-1.5 cursor-pointer rounded-2xl 
+          className="relative overflow-hidden inline-block px-5 py-1.5 cursor-pointer rounded-2xl font-header
                      group transition-all duration-500 border border-transparent hover:border-white-snow"
         >
           <span 
             className="absolute w-0 h-0 bg-white rounded-full 
-                       transition-all duration-500 ease-out -translate-x-1/2 -translate-y-1/2
+                       transition-all duration-500 ease-in-out -translate-x-1/2 -translate-y-1/2
                        top-(--y) left-(--x)
-                       group-hover:w-60 group-hover:h-60"
+                       group-hover:w-55 group-hover:h-55"
           ></span>
 
           <span className="relative z-10 transition-colors duration-300 group-hover:text-[#050505]">
