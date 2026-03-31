@@ -20,19 +20,28 @@ const Desc = () => {
 const Contact = () => {
   return (
     <a
-      className="glass-morphism
+      className="glass-morphism inline-block cursor-pointer overflow-hidden relative
+      shadow-[0_8px_20px_rgba(0,0,0,0.2)]
+
       transition-all duration-300 ease-out
-      hover:shadow-[0_20px_50px_rgba(255,159,28,0.2)]
-      hover:-translate-y-1
-      active:scale-95"
+      hover:shadow-[0_15px_45px_rgba(0,0,0,0.5)]
+      hover:-translate-y-0.75 active:scale-95
+
+      before:content-[''] before:absolute before:top-1/2 before:-right-10 before:-translate-y-1/2
+      before:w-40 before:h-40 before:bg-[#F8FBF8] before:rounded-full
+      before:scale-0 before:transition-transform before:duration-700 before:ease-in-out
+      hover:before:scale-[3]"
     >
-      <div className="flex items-center px-7 py-3 gap-3 text-[#050505]">
+      <div className="relative z-10 flex items-center px-7 py-3 gap-3 text-[#050505]">
         <span className="uppercase font-header font-bold text-[20px]">
           Get in Touch
         </span>
 
-        <div className="bg-[#F8FBF8] rounded-full p-1 flex items-center justify-center">
-          <ArrowUpRight size={20} className="text-[#050505]" />
+        <div className="bg-[#F8FBF8] rounded-full p-1.5 flex items-center justify-center">
+          <ArrowUpRight
+            size={20}
+            className="text-[#050505]"
+          />
         </div>
       </div>
     </a>
