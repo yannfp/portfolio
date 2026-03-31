@@ -26,10 +26,10 @@ const Contact = () => {
       transition-all duration-300 ease-out
       hover:shadow-[0_15px_45px_rgba(0,0,0,0.5)]
       hover:-translate-y-0.75 active:scale-95
-      hover:border-white
+      hover:border-white-snow
 
       before:content-[''] before:absolute before:top-1/2 before:-right-10 before:-translate-y-1/2
-      before:w-40 before:h-40 before:bg-white before:rounded-full
+      before:w-40 before:h-40 before:bg-white-snow before:rounded-full
       before:scale-0 before:transition-transform before:duration-700 before:ease-in-out
       hover:before:scale-[3]"
     >
@@ -38,7 +38,7 @@ const Contact = () => {
           Get in Touch
         </span>
 
-        <div className="bg-white rounded-full p-1.5 flex items-center justify-center">
+        <div className="bg-white-snow rounded-full p-1.5 flex items-center justify-center">
           <ArrowUpRight
             size={20}
             className="text-[#050505]"
