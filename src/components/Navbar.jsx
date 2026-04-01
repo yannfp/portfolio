@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const links = [
   { href: "#about", label: "About" },
@@ -8,7 +8,7 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
-const NavLinks = () => {
+const NavLinks = ({ isScrolled }) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e, index) => {
@@ -21,7 +21,7 @@ const NavLinks = () => {
   };
 
   return (
-    <div className="flex gap-10">
+    <div className={`flex items-center transition-all duration-500 ${isScrolled ? "gap-10": "gap-30"}`}>
       {links.map(({ href, label }, index) => (
         <a
           key={href}
@@ -35,7 +35,7 @@ const NavLinks = () => {
           className="relative overflow-hidden inline-block px-5 py-1.5 cursor-pointer rounded-2xl font-header
                      group transition-all duration-500 border border-transparent hover:border-white-snow"
         >
-          <span 
+          <span
             className="absolute w-0 h-0 bg-white rounded-full 
                        transition-all duration-500 ease-in-out -translate-x-1/2 -translate-y-1/2
                        top-(--y) left-(--x)
@@ -51,23 +51,46 @@ const NavLinks = () => {
   );
 };
 
-const Bar = () => {
+const Bar = ({ isScrolled }) => {
   return (
-    <div className="glass-morphism px-4 py-2 flex justify-center items-center w-2xl rounded-4xl">
-      <NavLinks />
+    <div
+      className={`
+        mx-auto flex justify-center items-center transition-all duration-500 ease-in-out
+        ${
+          isScrolled
+            ? "glass-morphism px-4 py-2 w-full max-w-2xl rounded-4xl border border-white/20 shadow-lg"
+            : "w-full max-w-full px-8 py-4 rounded-none border-transparent"
+        }
+      `}
+    >
+      <NavLinks isScrolled={isScrolled}/>
     </div>
   );
 };
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="relative">
-      <nav className="fixed top-0 left-0 w-full flex justify-center z-50 pointer-events-none mt-6">
-        <div className="pointer-events-auto w-full max-w-2xl">
-          <Bar />
-        </div>
-      </nav>
-    </div>
+    <nav
+      className={`
+        fixed left-0 right-0 mx-auto z-50 pointer-events-none transition-all duration-500
+        ${isScrolled ? "top-6" : "top-0"}
+      `}
+    >
+      <div className="pointer-events-auto w-full">
+        <Bar isScrolled={isScrolled} />
+      </div>
+    </nav>
   );
 };
 
