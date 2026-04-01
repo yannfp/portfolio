@@ -54,7 +54,7 @@ const Hero = () => {
     <div className="w-full h-screen p-20 flex flex-col justify-between bg-mango-pop">
       <div></div>
 
-      <div className="m-10">
+      <div className="mx-20 my-10">
         <Name />
 
         <div className="flex justify-between">
