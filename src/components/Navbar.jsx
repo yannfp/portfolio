@@ -21,7 +21,9 @@ const NavLinks = ({ isScrolled }) => {
   };
 
   return (
-    <div className={`flex items-center transition-all duration-500 ${isScrolled ? "gap-10": "gap-30"}`}>
+    <div
+      className={`flex items-center transition-all duration-500 ${isScrolled ? "gap-10" : "gap-30"}`}
+    >
       {links.map(({ href, label }, index) => (
         <a
           key={href}
@@ -63,7 +65,7 @@ const Bar = ({ isScrolled }) => {
         }
       `}
     >
-      <NavLinks isScrolled={isScrolled}/>
+      <NavLinks isScrolled={isScrolled} />
     </div>
   );
 };
