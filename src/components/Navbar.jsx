@@ -70,17 +70,8 @@ const Bar = ({ isScrolled }) => {
   );
 };
 
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+const Navbar = ({ isExternalScroll }) => {
+  const isScrolled = isExternalScroll;
 
   return (
     <nav

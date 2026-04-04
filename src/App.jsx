@@ -1,25 +1,32 @@
+import { useState, useRef } from "react";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 
 const App = () => {
+  const [scrollTop, setScrollTop] = useState(0);
+  const scrollContainerRef = useRef(null);
+
+  const handleScroll = (e) => {
+    setScrollTop(e.currentTarget.scrollTop);
+  };
+
   return (
-    <div className="w-screen h-screen">
+    <div className="relative w-screen h-screen overflow-hidden">
+      <div className="blur-top-overlay" />
+
       <div
-        className="fixed top-0 left-0 w-full z-10 h-32 pointer-events-none transition-opacity duration-500"
-        style={{
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-          background:
-            "linear-gradient(to bottom, rgba(255,255,255,0.1), transparent)",
-          maskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, black 0%, transparent 100%)",
-        }}
-      />
-      <Navbar />
-      <Hero />
-      <About />
+        ref={scrollContainerRef}
+        onScroll={handleScroll}
+        className="h-full overflow-y-auto overscroll-none"
+      >
+        <Navbar isExternalScroll={scrollTop > 50} />
+        <main>
+          <Hero />
+          <About />
+        </main>
+      </div>
     </div>
   );
 };
