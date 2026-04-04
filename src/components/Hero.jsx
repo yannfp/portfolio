@@ -19,20 +19,7 @@ const Desc = () => {
 
 const Contact = () => {
   return (
-    <a
-      className="glass-morphism inline-block cursor-pointer overflow-hidden relative
-      shadow-[0_8px_20px_rgba(0,0,0,0.2)]
-
-      transition-all duration-300 ease-out
-      hover:shadow-[0_15px_45px_rgba(0,0,0,0.5)]
-      hover:-translate-y-0.75 active:scale-95
-      hover:border-white-snow
-
-      before:content-[''] before:absolute before:top-1/2 before:-right-10 before:-translate-y-1/2
-      before:w-40 before:h-40 before:bg-white-snow before:rounded-full
-      before:scale-0 before:transition-transform before:duration-700 before:ease-in-out
-      hover:before:scale-[3]"
-    >
+    <a className="contact-button">
       <div className="relative z-10 flex items-center px-7 py-3 gap-3 text-[#050505]">
         <span className="uppercase font-header font-bold text-[20px]">
           Get in Touch
